@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import linkin from "../assets/link.webp"
-import git from "../assets/25231.png"
+import React, { useState, useEffect } from 'react';
+import linkin from "../assets/link.webp";
+import git from "../assets/25231.png";
 import { Link } from 'react-scroll';
 import Progress from './Progress';
+
 const Navbar = () => {
   const [navmod, setNavmod] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  
+ 
   useEffect(() => {
     const handleBack = () => {
       if (window.scrollY >= 112) {
@@ -15,25 +16,40 @@ const Navbar = () => {
         setNavmod(false);
       }
     };
-    
+   
     window.addEventListener('scroll', handleBack);
     return () => window.removeEventListener('scroll', handleBack);
   }, []);
-  
+ 
   const handleClick = () => {
     setIsNavOpen(!isNavOpen);
   };
-  
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isNavOpen && !event.target.closest('.navbar-container')) {
+        setIsNavOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isNavOpen]);
+ 
   return (
     <>
       <Progress />
-      <div className={`fixed flex justify-between items-center w-full z-50 transition-all duration-700 ${navmod ? 'bg-[#434343]' : 'bg-transparent'} ${isNavOpen ? 'h-80' : 'h-[107px]'}`}>
-        <h3 className="text-white text-2xl font-semibold ml-6 md:ml-24 mt-1 cursor-pointer" style={{fontFamily:'Playwrite_FR_Moderne,cursive'}}>El-Dorado</h3>
-        
-        <div className="flex items-center">
-          <nav className="relative">
-            <ul className={`${isNavOpen ? 'flex flex-col items-end absolute top-16 right-0 bg-[#434343] w-48 pt-4 pb-6 pr-4 space-y-4' : 'hidden md:flex md:flex-row md:mr-12 lg:mr-32 md:items-center md:space-x-8'} transition-all duration-500`}>
-              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 font-['Playwrite_FR_Moderne'] text-base">
+      <div className={`fixed w-full z-50 transition-all duration-500 navbar-container ${navmod ? 'bg-gray-700' : 'bg-transparent'}`}>
+        <div className="flex justify-between items-center px-6 md:px-16 lg:px-24 py-4">
+          <h3 className="text-white text-2xl font-semibold cursor-pointer" style={{fontFamily:'Playwrite_FR_Moderne,cursive'}}>
+            El-Dorado
+          </h3>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex items-center space-x-8">
+              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 font-medium">
                 <Link
                   activeClass="active"
                   to="home"
@@ -41,12 +57,11 @@ const Navbar = () => {
                   smooth={true}
                   offset={50}
                   duration={500}
-                  onClick={() => setIsNavOpen(false)}
                 >
                   Home
                 </Link>
               </li>
-              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 font-['Playwrite_FR_Moderne'] text-base">
+              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 font-medium">
                 <Link
                   activeClass="active"
                   to="about"
@@ -54,25 +69,11 @@ const Navbar = () => {
                   smooth={true}
                   offset={50}
                   duration={500}
-                  onClick={() => setIsNavOpen(false)}
                 >
                   About me
                 </Link>
               </li>
-              {/* <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 text-base">
-                <Link
-                  activeClass="active"
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  Projects
-                </Link>
-              </li> */}
-              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 font-['Playwrite_FR_Moderne'] text-base">
+              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 font-medium">
                 <Link
                   activeClass="active"
                   to="contact"
@@ -80,28 +81,89 @@ const Navbar = () => {
                   smooth={true}
                   offset={50}
                   duration={500}
-                  onClick={() => setIsNavOpen(false)}
                 >
                   Contact
                 </Link>
               </li>
-              <div className="flex space-x-4 mt-4 md:mt-0">
-                <a href="https://github.com/meetarora10" className="block">
-                  <img src={git} alt="GitHub" className="w-8 h-7" />
+              <div className="flex items-center space-x-4 ml-4">
+                <a href="https://github.com/meetarora10" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
+                  <img src={git} alt="GitHub" className="w-7 h-7" />
                 </a>
-                <a href="https://www.linkedin.com/in/meet-arora-603682296" className="block">
-                  <img src={linkin} alt="LinkedIn" className="w-8 h-7" />
+                <a href="https://www.linkedin.com/in/meet-arora-603682296" target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
+                  <img src={linkin} alt="LinkedIn" className="w-7 h-7" />
                 </a>
               </div>
             </ul>
           </nav>
           
-          {/* Hamburger Icon */}
-          <div className="md:hidden flex flex-col items-center justify-center mr-8 cursor-pointer z-50" onClick={handleClick}>
-            <div className="w-8 h-1 my-1 bg-white"></div>
-            <div className="w-8 h-1 my-1 bg-white"></div>
-            <div className="w-8 h-1 my-1 bg-white"></div>
-          </div>
+          {/* Hamburger Menu Button */}
+          <button 
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none z-50" 
+            onClick={handleClick}
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isNavOpen ? 'transform rotate-45 translate-y-1.5' : 'mb-1.5'}`}></span>
+            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isNavOpen ? 'opacity-0' : 'mb-1.5'}`}></span>
+            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${isNavOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}></span>
+          </button>
+        </div>
+        
+        {/* Mobile Navigation Menu */}
+        <div 
+          className={`md:hidden bg-gray-800 transition-all duration-300 overflow-hidden ${isNavOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}
+        >
+          <ul className="flex flex-col py-2 px-6">
+            <li className="py-3 border-b border-gray-700">
+              <Link
+                activeClass="active"
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="block text-white hover:text-gray-300 transition-colors font-medium"
+                onClick={() => setIsNavOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="py-3 border-b border-gray-700">
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="block text-white hover:text-gray-300 transition-colors font-medium"
+                onClick={() => setIsNavOpen(false)}
+              >
+                About me
+              </Link>
+            </li>
+            <li className="py-3 border-b border-gray-700">
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="block text-white hover:text-gray-300 transition-colors font-medium"
+                onClick={() => setIsNavOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="py-4 flex space-x-6">
+              <a href="https://github.com/meetarora10" target="_blank" rel="noopener noreferrer" className="block">
+                <img src={git} alt="GitHub" className="w-7 h-7" />
+              </a>
+              <a href="https://www.linkedin.com/in/meet-arora-603682296" target="_blank" rel="noopener noreferrer" className="block">
+                <img src={linkin} alt="LinkedIn" className="w-7 h-7" />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </>

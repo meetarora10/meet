@@ -11,7 +11,7 @@ const Contact = () => {
       </h1>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-        {/* Form */}
+
         <div className="w-full md:w-[45%] bg-white rounded-lg shadow-lg p-6 space-y-4">
           <input
             type="text"
@@ -32,7 +32,7 @@ const Contact = () => {
             Send
           </button>
         </div>
-        {/* Contact Info */}
+       
         <div className="w-full md:w-[35%] flex flex-col gap-6 text-gray-800">
           <div className="flex items-center gap-4">
             <FaPhoneAlt className="text-orange-500 text-xl" />

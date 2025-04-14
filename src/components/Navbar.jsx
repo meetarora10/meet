@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import linkin from "../assets/link.webp"
 import git from "../assets/25231.png"
 import { Link } from 'react-scroll';
-
+import Progress from './Progress';
 const Navbar = () => {
   const [navmod, setNavmod] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -26,6 +26,7 @@ const Navbar = () => {
   
   return (
     <>
+      <Progress />
       <div className={`fixed flex justify-between items-center w-full z-50 transition-all duration-700 ${navmod ? 'bg-[#434343]' : 'bg-transparent'} ${isNavOpen ? 'h-80' : 'h-[107px]'}`}>
         <h3 className="text-white text-2xl font-semibold ml-6 md:ml-24 mt-1 cursor-pointer" style={{fontFamily:'Playwrite_FR_Moderne,cursive'}}>El-Dorado</h3>
         
@@ -58,7 +59,7 @@ const Navbar = () => {
                   About me
                 </Link>
               </li>
-              <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 text-base">
+              {/* <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 text-base">
                 <Link
                   activeClass="active"
                   to="projects"
@@ -70,7 +71,7 @@ const Navbar = () => {
                 >
                   Projects
                 </Link>
-              </li>
+              </li> */}
               <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 w-24 h-8 font-['Playwrite_FR_Moderne'] text-base">
                 <Link
                   activeClass="active"

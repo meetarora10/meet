@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Progress = () => {
     window.onscroll = function () {
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -8,7 +7,7 @@ const Progress = () => {
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
   return (
-    <div id="progressBar"></div>
+    <div id="progressBar" className='fixed z-999 bg-[white] h-[6px] rounded-md'></div>
   )
 }
 

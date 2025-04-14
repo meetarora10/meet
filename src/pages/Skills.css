@@ -1,0 +1,55 @@
+.skills{
+    width: 100vw;
+    background: linear-gradient(45deg,blue,purple);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    height: 500px;
+}
+.coin{
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, .4);
+    /* filter: blur(0.5); */
+    margin-left: 280px;
+    width: 50%;
+    height: 300px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 6px;
+}
+.coin1,.coin2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec{
+    height: 7rem;
+    width: 8.4rem;
+    /* clip-path: circle(50%); */
+    /* clip-path: path('M 0 200 L 0,75 A 5,5 0,0,1 150,75 L 200 200 z'); */
+    clip-path: circle(100%);
+    background-color: black;
+    overflow: hidden;
+    border: 1px solid black;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    margin: 9px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 3px black;
+    color: white;
+}
+.sec:hover{
+    transform: scale(1.006);
+    box-shadow: 1px 1px 5px black
+}
+.sec img{
+    width: 56%;
+    height: 28%;
+    margin-top: 10px;
+    /* clip-path: polygon(50% 0%, 91% 25%, 91% 75%, 50% 100%, 9% 75%, 9% 25%); */
+    
+    
+  /* object-fit: cover; Make sure the image covers the container */
+  transition: transform 0.3s ease-in-out;
+}

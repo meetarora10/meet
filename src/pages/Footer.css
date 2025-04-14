@@ -1,0 +1,18 @@
+.foot{
+    width: 100vw;
+    background: url('../assets/footer-bg.png');
+    text-align: center;
+    margin-top: 15px;
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+}
+.foot img{
+    width: 36px;
+    height: 30px;
+    background-color: white;
+}

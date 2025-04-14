@@ -1,0 +1,6 @@
+@import "tailwindcss";
+*{
+    scroll-behavior: smooth;
+    /* overflow: hidden; */
+    font-family: "Bebas Neue", serif;
+}

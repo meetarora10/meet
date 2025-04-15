@@ -4,7 +4,7 @@ import git from '../assets/25231.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-[#1a1a1a] to-[#333] text-white px-4 py-10">
+    <footer className="bg-gradient-to-b from-neutral-700 to-neutral-700 text-white px-4 py-10">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
         <div className="text-base md:text-lg" >
           <p className="mb-2" style={{fontFamily:'Satoshi, sans-serif'}}>Thank you for visiting my portfolio website.</p>

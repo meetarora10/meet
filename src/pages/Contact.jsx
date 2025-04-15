@@ -5,8 +5,8 @@ import { MdLocationPin } from "react-icons/md"
 
 const Contact = () => {
   return (
-    <div id="contact" className="bg-gradient-to-b from-white to-gray-200 px-6 py-16">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+    <div id="contact" className="bg-gradient-to-b from-neutral-900 to-neutral-700 px-6 py-16 text-white">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
         Contact Me
       </h1>
 
@@ -28,12 +28,12 @@ const Contact = () => {
             rows="5"
             className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
-          <button className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition">
+          {/* <button className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition">
             Send
-          </button>
+          </button> */}
         </div>
        
-        <div className="w-full md:w-[35%] flex flex-col gap-6 text-gray-800">
+        <div className="w-full md:w-[35%] flex flex-col gap-6">
           <div className="flex items-center gap-4">
             <FaPhoneAlt className="text-orange-500 text-xl" />
             <p className="text-base" style={{fontFamily:'Satoshi, sans-serif'}}>+91-9582371097</p>

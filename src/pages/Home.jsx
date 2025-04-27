@@ -23,7 +23,7 @@ const Home = () => {
                     Passionate web developer crafting engaging digital experiences with modern technologies and creative solutions.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                    <a href="https://drive.google.com/file/d/15zpadQ8zuFSTuw0hznYKZyaBZDfUmDqf/view?usp=drive_link" 
+                    <a href="#" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        className="inline-block">

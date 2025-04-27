@@ -3,7 +3,7 @@ import linkin from "../assets/link.webp";
 import git from "../assets/25231.png";
 import { Link } from 'react-scroll';
 import Progress from './Progress';
-
+import Logo from '../assets/logo.png';
 const Navbar = () => {
   const [navmod, setNavmod] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -42,9 +42,10 @@ const Navbar = () => {
       <Progress />
       <div className={`fixed w-full z-50 transition-all duration-500 navbar-container ${navmod ? 'bg-gray-700' : 'bg-transparent'}`}>
         <div className="flex justify-between items-center px-6 md:px-16 lg:px-24 py-4">
-          <h3 className="text-white text-2xl font-semibold cursor-pointer" style={{fontFamily:'Playwrite_FR_Moderne,cursive'}}>
+          <img src={Logo} alt="" className='w-[44px] h-[40px]' />
+          {/* <h3 className="text-white text-2xl font-semibold cursor-pointer" style={{fontFamily:'Playwrite_FR_Moderne,cursive'}}>
             El-Dorado
-          </h3>
+          </h3> */}
           
           {/* Desktop Navigation */}
           <nav className="hidden md:block">

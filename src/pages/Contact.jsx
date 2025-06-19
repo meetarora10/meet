@@ -5,14 +5,14 @@ import { MdLocationPin } from "react-icons/md"
 
 const Contact = () => {
   return (
-    <div id="contact" className="bg-gradient-to-b from-neutral-900 to-neutral-700 px-6 py-16 text-white">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
+    <div id="contact" className= "py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-neutral-700 to-neutral-900 text-white">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10 text-blue-600">
         Contact Me
       </h1>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-12">
 
-        <div className="w-full md:w-[45%] bg-white rounded-lg shadow-lg p-6 space-y-4">
+        <div className="w-full md:w-[45%] bg-white rounded-lg shadow-lg p-6 space-y-4 text-black">
           <input
             type="text"
             placeholder="Enter your name"

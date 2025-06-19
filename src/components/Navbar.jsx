@@ -3,7 +3,6 @@ import linkin from "../assets/link.webp";
 import git from "../assets/25231.png";
 import { Link } from 'react-scroll';
 import Progress from './Progress';
-import Logo from '../assets/logo.png';
 const Navbar = () => {
   const [navmod, setNavmod] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -71,6 +70,18 @@ const Navbar = () => {
                   duration={500}
                 >
                   About me
+                </Link>
+              </li>
+                            <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 font-medium">
+                <Link
+                  activeClass="active"
+                  to="exp"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Experience
                 </Link>
               </li>
               <li className="cursor-pointer text-white text-opacity-60 hover:text-white hover:text-opacity-100 transition-all duration-300 font-medium">

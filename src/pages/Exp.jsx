@@ -113,6 +113,33 @@ const Exp = () => {
               </div>
             </div>
           </div>
+
+          <div 
+            className={`second m-2 p-4 border border-gray-700 rounded w-full max-w-[300px] flex flex-col items-center transition-all duration-[1800ms] transform hover:scale-105 hover:border-[#ff8300] hover:shadow-lg hover:shadow-[#ff8300]/20 ${
+              cardsVisible[1] 
+                ? 'opacity-100 translate-x-0' 
+                : 'opacity-0 translate-x-16'
+            }`}
+          >
+            <img 
+              className="w-20 h-20 object-contain mb-4 mx-auto rounded-full transition-transform duration-300 hover:rotate-12" 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Defence_Research_and_Development_Organisation.svg/1200px-Defence_Research_and_Development_Organisation.svg.png" 
+              alt="DRDO Logo" 
+            />
+            <div className="title flex-grow w-full">
+              <div className="p-4 rounded-lg shadow-md h-full flex flex-col justify-between text-center">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors duration-300 hover:text-[#ff8300]">
+                  Intern
+                </h3>
+                <p className="text-sm text-stone-300 mb-2" style={{fontFamily:'Satoshi, sans-serif'}}>
+                  Defence Research and Development Organisation | Jun 2025 - Present | Hybrid
+                </p>
+                <p className="mt-2 text-stone-200 text-sm" style={{fontFamily:'Satoshi, sans-serif'}}>
+                  Contributed to various projects focused on defense technology and research.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -158,10 +158,10 @@ const Exp = () => {
                   Intern
                 </h3>
                 <p className="text-sm text-stone-300 mb-2" style={{fontFamily:'Satoshi, sans-serif'}}>
-                  Defence Research and Development Organisation | Jul 2025 - Present | Hybrid
+                  Veersa Technologies | Jul 2025 - Present | Hybrid
                 </p>
                 <p className="mt-2 text-stone-200 text-sm" style={{fontFamily:'Satoshi, sans-serif'}}>
-                  Worked on Django, React and redux.
+                  Python, SQL.
                 </p>
               </div>
             </div>
